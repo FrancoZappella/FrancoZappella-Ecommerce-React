@@ -1,118 +1,117 @@
-import  React ,  {  useState  }  desde  'reaccionar'
-import  estilo  desde  'componentes con estilo'
-import  BurguerButton  desde  './BurguerButton'
+import  React , {useState} from 'react'
+import  style from 'styled-components'
+import  BurguerButton from './BurguerButton'
 
-Función  Barra de navegación ( )  {
+function Navbar() {
 
-    const  [ clic ,  setClicked ]  =  useState ( false )
-    const  handleClick  =  ( )  =>  {
+    const  [clicked , setClicked] = useState(false)
+    const  handleClick  =  ()  =>  {
     
-    setClicked ( ! clicked )
-  }
-  volver  (
-    < >
-      < Contenedor de navegación >
-        < h2 > Barra de navegación < span > Sensible < / span > < / h2 >
-        < div  className = { `enlaces ${ ¿ se hizo clic ? 'activo' : '' } ` } >
-          < a  onClick = { handleClick }  href = "#h" > Inicio < / a >
-          < a  onClick = { handleClick }  href = "#h" > Tienda < / a >
-          < a  onClick = { handleClick }  href = "#h" > Acerca de < / a >
-          < a  onClick = { handleClick }  href = "#h" > Contacto < / a >
-          < a  onClick = { handleClick }  href = "#h" > Blog < / a >
-        < / div >
-        < div  className = 'burguer' >
-          < BurguerButton  hizo clic = { hizo clic }  handleClick = { handleClick }  / >
-        < / div >
-        < BgDiv  className = { `inicial ${ ¿se hizo clic ? 'activo' : '' } ` } > < / BgDiv >
-      < / NavContainer >
-    < / >
-  )
+    setClicked(!clicked)
+}
+return (
+    <>
+    <NavContainer>
+        <h2>Navbar<span>Responsive</span></h2>
+        <div className = {`links ${clicked ? 'active' : '' }`}>
+            <a onClick = {handleClick} href="#h">Inicio</a>
+            <a onClick = {handleClick} href="#h">Tienda</a>
+            <a onClick = {handleClick} href="#h">Acerca de</a>
+            <a onClick = {handleClick} href="#h">Contacto</a>
+            <a onClick = {handleClick} href="#h">Blog</a>
+        </div>
+        <div className = 'burguer'>
+            <BurguerButton clicked = {clicked} handleClick = {handleClick}/>
+        </div>
+        <BgDiv  className = {`initial ${ clicked?'active':''}`}></BgDiv>
+        </NavContainer>
+        </>
+    )
 }
 
-Exportar barra de  navegación predeterminada 
+export default Navbar 
 
-const  NavContainer  =  con estilo . nav `
-h2{
-    color blanco;
-    peso de fuente: 400;
-    lapso{
-fuente-peso: negrita;
+const NavContainer = styled.nav`
+    h2{
+        color: white;
+        font-weight: 400;
+        span{
+        font-weight: bold;
     }
-    }
-acolchado: 0,4 rem;
-color de fondo: #333;
-pantalla: flexible;
-alinear elementos: centro;
-justificar-contenido: espacio-entre;
+}
+padding: .4rem;
+background-color: #333;
+display: flex;
+align-items: center;
+justify-content: space-berween;
 a{
-    color blanco;
-    texto-decoración: ninguno;
-    margen derecho: 1rem;
+    color: white;
+    text-decoration: none;
+    margin-right: 1rem;
 }
-.Enlaces{
-    posición: absoluta;
-    arriba: -700px;
-    izquierda: -2000px;
-    derecha: 0;
-    margen izquierdo: automático;
-    margen derecho: automático;
-    alineación de texto: centro;
-    transición: todos .5s facilidad;
+.links{
+    position: absolute;
+    top: -700px;
+    left: -2000px;
+    right: 0;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+    transition: all .5s ease;
     a{
-        color blanco;
-        tamaño de fuente: 2rem;
-        bloqueo de pantalla;
+        color: white;
+        font-size: 2rem;
+        display: block;
     }
-    @media(ancho mínimo: 768px){
-        posición: inicial;
-        margen: 0;
+    @media(min-width: 768px){
+        position: initial;
+        margin: 0;
         a{
-        tamaño de fuente: 1 rem;
-        color blanco;
-        pantalla: en línea;
-    }
-        bloqueo de pantalla;
+            font-size: 1 rem;
+            color: white;
+            display: inline;
+        }
     }
 }
-.enlaces.activos{
-    ancho: 100%;
-    bloqueo de pantalla;
-    posición: absoluta;
-    margen izquierdo: automático;
-    margen derecho: automático;
-    arriba: 30%;
-    izquierda: 0;
-    derecha: 0;
-    alineación de texto: centro;
+.links.active{
+    width: 100%;
+    display: block;
+    position: absolute;
+    margin-left: auto;
+    margin-right: auto;
+    top: 30%;
+    left: 0;
+    right: 0;
+    text-align: center;
     a{
-        tamaño de fuente: 2rem;
-        margen superior: 1 rem;
-        color blanco;
+        font-size: 2rem;
+        margin-top: 1 rem;
+        color: white;
     }
 }
 .burguer{
-    @media(ancho mínimo: 768px){
-        pantalla: ninguno;
+    @media(min-width:768px){
+        pantalla: none;
     }
 }
 `
 
-const  BgDiv  =  estilo . div `
-color de fondo: #222;
-posición: absoluta;
-arriba: -1000px;
-izquierda: -1000px;
-ancho: 100%;
-altura: 100%;
-índice z: -1;transición: todo .6s facilidad;
-&.activo{
-    borde-radio: 0 0 80% 0;
-    superior: 0;
+const BgDiv = styled.div `
+background-color: #222;
+position: absolute;
+top: -1000px;
+left: -1000px;
+width: 100%;
+height: 100%;
+z-index: -1;
+transition: all .6s ease;
+&.active{
+    border-radius: 0 0 80% 0;
+    top: 0;
     izquierda: 0;
     ancho: 100%;
     altura: 100%;
 }
-
 
 
 

@@ -1,72 +1,72 @@
-import  reaccionar  desde  'reaccionar'
-import  estilo  desde  'componentes con estilo'
+import  react from 'react'
+import  style from 'styled-components'
 
-function  BurguerButton ( accesorios )  {
-  volver  (
-    < Hamburguesa >
-      < div   onClick = { props . handleClick } 
-            className = { `icono de navegación-icono-5 ${ props . hizo clic ? 'abrir' : '' } ` }
-      >
-        < lapso > < / lapso >
-        < lapso > < / lapso >
-        < lapso > < / lapso >
-      < / div >
-    < / Hamburguesa >
+function BurguerButton (props) {
+return (
+    <Burguer>
+      <div onClick = {props.handleClick} 
+            className ={`icon nav-icon-5 ${ props.clicked ? 'open' :''}`}
+            >
+        <span> </span>
+        <span> </span>
+        <span> </span>
+      </div>
+    </Burguer>
   )
 }
 
-exportar  BurguerButton por defecto 
+export default BurguerButton 
 
-const  Burguer  =  estilo . div `
-  /* icono de navegación-5 */
-.nav-icono-5{
-  ancho: 35px;
-  altura: 30px;
-  margen: 10px 10px;
-  posición: relativa;
-  cursor: puntero;
-  pantalla: bloque en línea;
+const Burguer = styled.div`
+
+.nav-icon-5{
+  width: 35px;
+  height: 30px;
+  margin: 10px 10px;
+  position: relative;
+  cursor: pointer;
+  display: inline-block;
 }
-.nav-icon-5 tramo{
-  color de fondo:#fff;
-  posición: absoluta;
-  borde-radio: 2px;
-  transición: .3s cubic-bezier (.8, .5, .2, 1.4);
-  ancho: 100%;
-  altura: 4px;
-  transición-duración: 500ms
+.nav-icon-5 span{
+  background-color:#fff;
+  position: absolute;
+  border-radius: 2px;
+  transition: .3s cubic-bezier(.8, .5, .2, 1.4);
+  width:100%;
+  height: 4px;
+  transition-duration: 500ms
 }
 .nav-icon-5 span:nth-child(1){
-  superior: 0px;
-  izquierda: 0px;
+  top:0px;
+  left: 0px;
 }
 .nav-icon-5 span:nth-child(2){
-  arriba: 13px;
-  izquierda: 0px;
-  opacidad: 1;
+  top:13px;
+  left: 0px;
+  opacity:1;
 }
 .nav-icon-5 span:nth-child(3){
-  inferior: 0px;
-  izquierda: 0px;
+  bottom:0px;
+  left: 0px;
 }
-.nav-icon-5:no(.abrir):hover span:nth-child(1){
-  transformar: rotar (-3 grados) scaleY (1.1);
+.nav-icon-5:not(.open):hover span:nth-child(1){
+  transform: rotate(-3deg) scaleY(1.1);
 }
-.nav-icon-5:no(.abrir):hover span:nth-child(2){
-  transformar: rotar (3 grados) scaleY (1.1);
+.nav-icon-5:not(.open):hover span:nth-child(2){
+  transform: rotate(3deg) scaleY(1.1);
 }
-.nav-icon-5:no(.abrir):hover span:nth-child(3){
-  transformar: rotar (-4 grados) scaleY (1.1);
+.nav-icon-5:not(.open):hover span:nth-child(3){
+  transform: rotate(-4deg) scaleY(1.1);
 }
 .nav-icon-5.open span:nth-child(1){
-  transformar: rotar (45 grados);
-  arriba: 13px;
+  transform: rotate(45deg);
+  top: 13px;
 }
 .nav-icon-5.open span:nth-child(2){
-  opacidad: 0;
+  opacity:0;
 }
 .nav-icon-5.open span:nth-child(3){
-  transformar: rotar (-45 grados);
-  arriba: 13px;
+  transform: rotate(-45deg);
+  top: 13px;
 }
 `
