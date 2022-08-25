@@ -1,35 +1,40 @@
-import  React , {useState} from 'react'
-import  style from 'styled-components'
-import  BurguerButton from './BurguerButton'
+import React, { useState } from 'react'
+import styled from 'styled-components'
+import BurguerButton from './BurguerButton'
+
 
 function Navbar() {
 
-    const  [clicked , setClicked] = useState(false)
-    const  handleClick  =  ()  =>  {
-    
-    setClicked(!clicked)
-}
-return (
-    <>
-    <NavContainer>
-        <h2>Navbar<span>Responsive</span></h2>
-        <div className = {`links ${clicked ? 'active' : '' }`}>
-            <a onClick = {handleClick} href="#h">Inicio</a>
-            <a onClick = {handleClick} href="#h">Tienda</a>
-            <a onClick = {handleClick} href="#h">Acerca de</a>
-            <a onClick = {handleClick} href="#h">Contacto</a>
-            <a onClick = {handleClick} href="#h">Blog</a>
-        </div>
-        <div className = 'burguer'>
-            <BurguerButton clicked = {clicked} handleClick = {handleClick}/>
-        </div>
-        <BgDiv  className = {`initial ${ clicked?'active':''}`}></BgDiv>
-        </NavContainer>
+
+    const [clicked, setClicked] = useState(false)
+    const handleClick = () => {
+
+
+        setClicked(!clicked)
+    }
+    return (
+        <>
+            <NavContainer>
+                <h2>Navbar<span>Responsive</span></h2>
+                <div className={`links ${clicked ? 'active' : ''}`}>
+                    <a onClick={handleClick} href="#h">Inicio</a>
+                    <a onClick={handleClick} href="#h">Tienda</a>
+                    <a onClick={handleClick} href="#h">Acerca de</a>
+                    <a onClick={handleClick} href="#h">Contacto</a>
+                    <a onClick={handleClick} href="#h">Blog</a>
+                </div>
+                <div className='burguer'>
+                    <BurguerButton clicked={clicked} handleClick={handleClick} />
+                </div>
+                <BgDiv className={`initial ${clicked ? 'active' : ''}`}></BgDiv>
+            </NavContainer>
         </>
     )
 }
 
-export default Navbar 
+
+export default Navbar
+
 
 const NavContainer = styled.nav`
     h2{
@@ -43,7 +48,7 @@ padding: .4rem;
 background-color: #333;
 display: flex;
 align-items: center;
-justify-content: space-berween;
+justify-content: space-between;
 a{
     color: white;
     text-decoration: none;
@@ -96,7 +101,8 @@ a{
 }
 `
 
-const BgDiv = styled.div `
+
+const BgDiv = styled.div`
 background-color: #222;
 position: absolute;
 top: -1000px;
@@ -111,7 +117,9 @@ transition: all .6s ease;
     izquierda: 0;
     ancho: 100%;
     altura: 100%;
-}
+} 
+`
+
 
 
 
