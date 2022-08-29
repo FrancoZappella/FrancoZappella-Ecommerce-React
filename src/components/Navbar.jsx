@@ -2,7 +2,6 @@ import React, { useState } from 'react'
 import styled from 'styled-components'
 import BurguerButton from './BurguerButton'
 
-
 function Navbar() {
 
 
@@ -15,7 +14,7 @@ function Navbar() {
     return (
         <>
             <NavContainer>
-                <h2>Navbar<span>Responsive</span></h2>
+                <h2>Mono<span>Padel</span></h2>
                 <div className={`links ${clicked ? 'active' : ''}`}>
                     <a onClick={handleClick} href="#h">Inicio</a>
                     <a onClick={handleClick} href="#h">Tienda</a>

@@ -7,6 +7,9 @@ function App() {
     <div>
       <header >
         <Navbar/>
+        <hr>
+        <Shoppingcarts/>
+        </hr>
       </header>
     </div>
   );
